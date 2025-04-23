@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<section class="container mx-auto px-4 py-10">
+    <h2 class="text-4xl font-bold text-center text-emerald-500 mb-10" data-aos="fade-down">My Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="card-hover bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-up">
+            <h3 class="text-xl font-semibold mb-2">To-Do App</h3>
+            <p class="text-gray-400">A simple task management app built with Flask and SQLite.</p>
+            <a href="https://github.com/kaycoder97/todo-app" target="_blank"
+               class="btn-hover glow-hover inline-block mt-4 bg-emerald-600 px-4 py-2 rounded text-white">
+               View on GitHub
+            </a>
+        </div>
+
+        <div class="card-hover bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="zoom-in">
+            <h3 class="text-xl font-semibold mb-2">File Manager</h3>
+            <p class="text-gray-400">Manage and organize your files easily through a web interface.</p>
+            <a href="https://github.com/kaycoder97/file-manager" target="_blank"
+               class="btn-hover glow-hover inline-block mt-4 bg-emerald-600 px-4 py-2 rounded text-white">
+               View on GitHub
+            </a>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

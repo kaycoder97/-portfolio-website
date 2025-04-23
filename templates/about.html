@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}About Me - Kenny's Portfolio{% endblock %}
+
+{% block content %}
+<section class="px-6 py-20 max-w-5xl mx-auto text-gray-300">
+    <h1 class="text-4xl font-bold mb-6 text-center">About Me</h1>
+
+    <!-- Intro -->
+    <div class="flex flex-col md:flex-row gap-10 items-center mb-16">
+        <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Kenny" class="w-48 h-48 rounded-full shadow-lg">
+        <div>
+            <p class="text-lg leading-relaxed">
+                Hey! I'm <strong>Kenny</strong>, a Full Stack Developer who turns ideas into interactive, user-friendly web experiences. With a strong grip on Flask, Python, JavaScript, and modern web tools, I build beautiful and functional apps from scratch.
+            </p>
+            <p class="text-lg mt-4 leading-relaxed">
+                I love bringing concepts to life with clean code, scalable architecture, and thoughtful design. Outside tech, I enjoy learning about culture, AI, and sharing knowledge through storytelling.
+            </p>
+        </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="mb-16">
+        <h2 class="text-2xl font-semibold mb-4">My Developer Journey 🛤️</h2>
+        <ul class="border-l-2 border-blue-500 pl-6">
+            <li class="mb-8">
+                <div class="text-sm text-blue-400">2022</div>
+                <p class="font-semibold">Started learning Python & web development</p>
+                <p class="text-sm">Began building mini projects and exploring Flask</p>
+            </li>
+            <li class="mb-8">
+                <div class="text-sm text-blue-400">2023</div>
+                <p class="font-semibold">Created full-stack apps using Flask & JS</p>
+                <p class="text-sm">Built a to-do list app, a file manager, and more</p>
+            </li>
+            <li>
+                <div class="text-sm text-blue-400">2024 & beyond</div>
+                <p class="font-semibold">Mastering frontend + building bigger projects</p>
+                <p class="text-sm">Currently working on my portfolio and real-world tools</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Tools I Use -->
+    <div>
+        <h2 class="text-2xl font-semibold mb-4">Tools I Use 🧰</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
+            <div class="bg-gray-800 rounded-xl p-4 shadow-sm">Python</div>
+            <div class="bg-gray-800 rounded-xl p-4 shadow-sm">Flask</div>
+            <div class="bg-gray-800 rounded-xl p-4 shadow-sm">JavaScript</div>
+            <div class="bg-gray-800 rounded-xl p-4 shadow-sm">HTML & CSS</div>
+            <div class="bg-gray-800 rounded-xl p-4 shadow-sm">Tailwind CSS</div>
+            <div class="bg-gray-800 rounded-xl p-4 shadow-sm">Bootstrap</div>
+            <div class="bg-gray-800 rounded-xl p-4 shadow-sm">Git & GitHub</div>
+            <div class="bg-gray-800 rounded-xl p-4 shadow-sm">VS Code</div>
+        </div>
+    </div>
+</section>
+{% endblock %}

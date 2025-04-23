@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero flex flex-col md:flex-row items-center gap-6 px-6 py-20" data-aos="fade-up">
+    <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Kenny Profile"
+         class="w-40 h-40 rounded-full shadow-lg">
+    <div>
+        <h1 class="text-4xl font-bold">Hi, I'm Kenny 👋</h1>
+        <p class="text-lg mt-2 text-gray-300">
+            I'm a Full Stack Developer passionate about building beautiful and functional web applications.
+        </p>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills-section px-6 py-10 bg-gray-800" data-aos="fade-right">
+    <h2 class="text-2xl font-bold mb-6">What I Do</h2>
+    <div class="space-y-6">
+        {% set skills = [
+            ('Flask & Python', '90%', '#f57c00'),
+            ('JavaScript', '80%', '#2196f3'),
+            ('SQL', '75%', '#4caf50'),
+            ('HTML & CSS', '85%', '#e91e63')
+        ] %}
+        {% for skill, width, color in skills %}
+        <div>
+            <h3 class="font-semibold">{{ skill }}</h3>
+            <div class="w-full bg-gray-600 rounded h-4">
+                <div class="h-4 rounded" style="width: {{ width }}; background-color: {{ color }};"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects-section px-6 py-10" data-aos="fade-up">
+    <h2 class="text-2xl font-bold mb-6">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold">To-Do List App</h3>
+            <p class="text-gray-400">A simple and responsive to-do list application built with Flask and JavaScript.</p>
+            <a href="https://github.com/kaycoder97/kaycode" class="text-emerald-400 hover:underline" target="_blank">View on GitHub</a>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold">File Manager</h3>
+            <p class="text-gray-400">A lightweight file management tool with a sleek UI and file system browsing.</p>
+            <a href="https://github.com/kaycoder97/file-organizer" class="text-emerald-400 hover:underline" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Section -->
+<section class="blog-section px-6 py-10 bg-gray-800" data-aos="fade-left">
+    <h2 class="text-2xl font-bold mb-6">My Blog</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold">The Power of Flask for Full Stack Developers</h3>
+            <p class="text-sm text-gray-400">2025-04-20</p>
+            <p class="mt-2 text-gray-300">Discover why Flask is still a top choice for Python developers building scalable full-stack applications.</p>
+            <a href="/blog/flask-power" class="text-emerald-400 hover:underline">Read More</a>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-bold">Mastering JavaScript for Dynamic Web Apps</h3>
+            <p class="text-sm text-gray-400">2025-04-15</p>
+            <p class="mt-2 text-gray-300">A walkthrough of key JavaScript concepts and techniques that every full-stack dev should know.</p>
+            <a href="/blog/mastering-js" class="text-emerald-400 hover:underline">Read More</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section px-6 py-10" data-aos="zoom-in">
+    <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
+    <p class="mb-6 text-gray-300">Got a project or just want to say hello? I’d love to hear from you.</p>
+    <form action="/send-message" method="POST" class="space-y-4 max-w-xl">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-2 bg-gray-800 border border-gray-700 rounded">
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 bg-gray-800 border border-gray-700 rounded">
+        <textarea name="message" rows="5" placeholder="Your Message" required class="w-full p-2 bg-gray-800 border border-gray-700 rounded"></textarea>
+        <button type="submit" class="bg-emerald-500 hover:bg-emerald-600 px-4 py-2 rounded text-white">Send Message</button>
+    </form>
+</section>
+
+{% endblock %}
